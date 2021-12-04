@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/"
+    "start": "babel-node src/",
+    "build": "babel src --out-dir build",
+    "dev": "nodemon --exec npm run start"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +26,10 @@
     "timeago.js": "^4.0.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
     "nodemon": "^2.0.15"
   }
 }

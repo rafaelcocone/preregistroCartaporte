@@ -1,7 +1,7 @@
-const express = require('express')
-const morgan = require('morgan')
-const { engine } = require('express-handlebars')
-const path = require('path')
+import express from 'express'
+import morgan from 'morgan'
+import { engine } from 'express-handlebars'
+import path from 'path'
 
 //initializaction
 const app = express()
@@ -34,6 +34,7 @@ app.use((req,res,next) => {
 //Routes
 app.use(require('./routes'))
 app.use(require('./routes/authentication'))
+app.use('/cartaporte',require('./routes/cartaporte'))
 app.use('/links',require('./routes/links'))
 app.use('/guias',require('./routes/guias'))
 
