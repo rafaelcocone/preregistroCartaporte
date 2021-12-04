@@ -1,5 +1,7 @@
-import express from 'express'
-const router = express.Router()
+//almacenar rutas principales
+import {Router} from 'express'
+const router = Router()
+
 
 import {connect} from '../database'
 
@@ -9,8 +11,8 @@ router.get('/create', (req,res) => {
 })
 
 router.get('/', (req,res) => {
-    res.send('Carta porte')
+    res.render('cartaporte/cartaporte.hbs')
 })
 
 
-module.exports = router
+export default router
