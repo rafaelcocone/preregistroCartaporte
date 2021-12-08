@@ -1,14 +1,9 @@
 <h2>Descripción de mercancias</h2>
 
-<form action="/mercancias/add" method="POST">
-    
-    <div class="formularioSection">
-        <div class="formularioRow">
-            <h3>Agregar Mercancia</h3>
-        </div>
-        <div class="formularioSection" id="formualrioMercancias">
+{{> mercancias/mercanciasForm}}
 
-        </div>
-    </div>
-</form>
+{{> mercancias/mercanciasTable}}
+
+<script src="/js/formularios/formularios.js"></script>
+<script src="/js/formularios/formMercancias.js"></script>
 

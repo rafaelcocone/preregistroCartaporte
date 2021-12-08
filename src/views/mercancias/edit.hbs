@@ -1,0 +1,36 @@
+<h2>Editar mercancia</h2>
+<form action="/mercancias/edit/{{mercancias.id}}" method="POST">
+
+  <div class="formularioSection">
+    <div class="formularioRow">
+      <h3>Agregar Mercancia </h3>
+    </div>
+    <div class="formularioSection" id="formualrioMercancias">
+
+    </div>
+  </div>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="/js/formularios/formularios.js"></script>
+<script>
+     const mercancias = {}
+        mercancias.cantidad= "{{{mercancias.cantidad}}}"
+        mercancias.id_claveUnidad= "{{{mercancias.id_claveUnidad}}}"
+        mercancias.claveProducto= "{{{mercancias.claveProducto}}}"
+        mercancias.altura= "{{{mercancias.altura}}}"
+        mercancias.longitud= "{{{mercancias.longitud}}}"
+        mercancias.ancho= "{{{mercancias.ancho}}}"
+        mercancias.valor= "{{{mercancias.valor}}}"
+       
+        mercancias.materialPeligroso= "{{{mercancias.materialPeligroso}}}"
+        mercancias.embalaje= "{{{mercancias.embalaje}}}"
+        mercancias.STCC= "{{{mercancias.STCC}}}" 
+        mercancias.fracArancelaria= "{{{mercancias.fracArancelaria}}}"
+        mercancias.moneda= "{{{mercancias.moneda}}}"
+
+</script>
+
+
+
+<script src="/js/formularios/formMercanciasEdit.js"></script>

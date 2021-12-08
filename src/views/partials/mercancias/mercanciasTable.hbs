@@ -1,0 +1,43 @@
+<table>
+  <thead>
+    <tr>
+       <th>No.</th>
+      <th>Cantidad</th>
+      <th>Unidad</th>
+      <th>Producto</th>
+      <th>Altura</th>
+      <th>Longitud</th>
+      <th>Ancho</th>
+      <th>Valor</th>
+      <th>Moneda</th>
+      <th>Material Peligroso</th>
+      <th>Embalaje</th>
+      <th>STCC</th>
+      <th>Frac. Arancelaria</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    {{#each mercancias}}
+    <tr>
+      <td>{{@index}}</td>
+      <td>{{cantidad}}</td>
+       <td>{{id_claveUnidad}}</td>
+       <td>{{claveProducto}}</td>
+       <td>{{altura}}</td>
+       <td>{{longitud}}</td>
+       <td>{{ancho}}</td>
+       <td>{{valor}}</td>
+       <td>{{moneda}}</td>
+       <td>{{materialPeligroso}}</td>
+       <td>{{embalaje}}</td>
+       <td>{{STCC}}</td>
+       <td>{{fracArancelaria}}</td>
+      <td><a href="/mercancias/edit/{{id}}">Editar</a></td>
+      <td><a href="/mercancias/delete/{{id}}">Eliminar</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
