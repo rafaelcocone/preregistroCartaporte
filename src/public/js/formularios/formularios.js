@@ -174,6 +174,10 @@ const FORM_ELEMENTS = {
         inputRef.name = name
         inputRef.placeholder = title
         inputRef.value = value
+        inputRef.classList.add("form-control")
+        inputRef.classList.add("rounded-0")
+        inputRef.classList.add("bg-dark")
+        inputRef.classList.add("text-white")
     
         const inputDiv = document.createElement("div")
         inputDiv.classList.add("formularioInput")
@@ -182,6 +186,7 @@ const FORM_ELEMENTS = {
         row.classList.add("formularioRow")
         row.appendChild(labelDiv)
         row.appendChild(inputDiv)    
+        row.classList.add("mb-3")
 
         return row
     },
@@ -197,6 +202,10 @@ const FORM_ELEMENTS = {
         const selectList = document.createElement("select")
         selectList.id = name
         selectList.name = name
+        selectList.classList.add("form-control")
+        selectList.classList.add("rounded-0")
+        selectList.classList.add("bg-dark")
+        selectList.classList.add("text-white")
     
         let option = document.createElement("option")
         option.value = ""
@@ -219,6 +228,8 @@ const FORM_ELEMENTS = {
         row.classList.add("formularioRow")
         row.appendChild(labelDiv)
         row.appendChild(inputDiv)
+
+        row.classList.add("mb-3")
         return row    
     },
     "button": (type,title,func = null) => {
@@ -229,12 +240,37 @@ const FORM_ELEMENTS = {
         if(func) inputRef.onclick = func
         return inputRef
     },
-    "buttonDivForm": () => {
+    "inputButton": (type,title,func = null) => {
+        const inputRef = document.createElement("input")
+        inputRef.type = type
+       // inputRef.id =  title
+        inputRef.value = title
+        if(func) inputRef.onclick = func
+        return inputRef
+    },
+    "buttonDivForm": ({submitName}) => {
         const divButtons = document.createElement("div")
         divButtons.classList.add("formularioDivButtons")
 
-        divButtons.appendChild(FORM_ELEMENTS.button("submit","Agregar"))
-        divButtons.appendChild(FORM_ELEMENTS.button("reset","Limpiar"))
+        //divButtons.appendChild(FORM_ELEMENTS.button("submit",submitName))
+        const inputRef = document.createElement("button")
+        inputRef.classList.add('btn')
+        inputRef.classList.add('btn-primary') 
+        inputRef.classList.add('btm-sm')
+        inputRef.classList.add('m-2') 
+        inputRef.textContent = submitName
+        divButtons.appendChild(inputRef)
+
+        const inputReset = document.createElement("button")
+        inputReset.classList.add('btn')
+        inputReset.classList.add('btn-secondary') 
+        inputReset.classList.add('btm-sm')
+        inputReset.classList.add('m-2') 
+        inputReset.setAttribute('type', 'reset') 
+        inputReset.textContent = "Limpiar"
+        divButtons.appendChild(inputReset)
+
+        //divButtons.appendChild(FORM_ELEMENTS.button("reset","Limpiar"))
 
         const row = document.createElement("div")
         row.classList.add("formularioRow")

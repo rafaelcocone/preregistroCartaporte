@@ -12,7 +12,7 @@ let componentes = [
    {name:"embalaje",title:"Embalaje", type:"input"},
    {name:"STCC",title:"Clave STCC", type:"input"},
    {name:"fracArancelaria",title:"Frac. Arancelaria", type:"input"},
-   {type:"buttonDivForm"}
+   {type:"buttonDivForm",submitName: "Agregar"}
 ]
 
 const formulario = document.getElementById(nombreFormulario)

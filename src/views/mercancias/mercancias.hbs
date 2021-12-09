@@ -1,8 +1,15 @@
-<h2>Descripción de mercancias</h2>
-
-{{> mercancias/mercanciasForm}}
-
-{{> mercancias/mercanciasTable}}
+<div class="container">
+    <div class="row">
+         <h2 class="text-white">Descripción de mercancias</h2>
+        <div class="col-md-4">
+             {{> mercancias/mercanciasForm}}
+        </div>
+       <div class="col-md-8">
+           {{> mercancias/mercanciasTable}}
+       </div>
+    </div>
+   
+</div>
 
 <script src="/js/formularios/formularios.js"></script>
 <script src="/js/formularios/formMercancias.js"></script>

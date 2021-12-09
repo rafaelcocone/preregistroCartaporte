@@ -1,6 +1,10 @@
-export const config = {
-    host:"localhost",
-    user:"root",
-    password:"", 
-    database:"pruebas"
+import {config} from 'dotenv'
+config()
+
+
+export const configMYSQL = {
+    host: process.env.MYSQL_HOST || 'localhost',
+    user: process.env.MYSQL_USER ||"root",
+    password:  process.env.MYSQL_PASSWORD || "", 
+    database: process.env.MYSQL_DATABASE || "pruebas"
 }
