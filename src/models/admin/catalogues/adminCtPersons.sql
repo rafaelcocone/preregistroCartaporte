@@ -4,15 +4,20 @@ create table adminCtPersons (
      lastname1 varchar(50) not null,
      lastname2 varchar(50) not null,
 
-     direction varchar(250) not null,
+     id_localion int(10) unsigned NOT NULL,
+     postalCode varchar(5) not null,
+     suburb varchar(100) not null,
+     street varchar(100) not null,
+     numberOutter varchar(20) not null,
+     numberInner varchar(20) default null,
      
      telephone varchar(50) not null,
      mobil varchar(50) not null,
      email varchar(200) not null,
      rfc varchar(20) not null,
      businessName varchar(200) DEFAULT NULL,
+     
      active tinyint(1) unsigned DEFAULT 1,
-    
     created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ,
     updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
     users_c_id int(10) unsigned NOT NULL,
@@ -28,9 +33,10 @@ INSERT INTO adminCtPersons (name,
                               mobil,
                               email,
                               rfc,
-                              businessName   
+                              businessName,
+                              id_localion   
                               )
-VALUES ("Osiris Rafael", "Cocone","López","6 sur #23","","247-118-78-98","rafaelcocone@gmail.com","QAZ123456","MOVING-PACK")
+VALUES ("Osiris Rafael", "Cocone","López","6 sur #23","","247-118-78-98","rafaelcocone@gmail.com","QAZ123456","MOVING-PACK","0")
 
 
 -- Constraints Section
@@ -44,6 +50,9 @@ alter table adminCtPersons add constraint REF_Persons_users_FK
      foreign key (users_u_id)
      references adminCtUsers (`id`);
 
+alter table adminCtPersons add constraint REF_person_location_FK
+     foreign key (id_localion)
+     references adminCtLocalities(`id`);
 
 -- Index Section
 -- _____________ 
@@ -56,3 +65,6 @@ create index REF_adminCtPersons_users_CRE_IND
 
 create index REF_adminCtPersons_users_MOD_IND
      on adminCtPersons (users_u_id);
+
+create index REF_person_location_IND
+     on adminCtPersons (id_localion);
