@@ -4,6 +4,7 @@ let componentes = [
    {name:"cantidad",title:"Cantidad", type:"input", value:"1"},
    {name:"id_claveUnidad",title:"Unidad",type:"select", data:catUnidades , value:"1" },
    {name:"claveProducto",title:"Clave de producto", type:"input"},
+   {name:"id_divBusquedaProducto",title:"Busqueda de producto", type:"div"},
    {name:"altura",title:"Altura", type:"input"},
    {name:"longitud",title:"Longitud", type:"input"},
    {name:"ancho",title:"Ancho", type:"input"},
@@ -28,12 +29,26 @@ var clases = {}
 
 
 componentes.forEach(element => {
-   //formulario.appendChild( FORM_ELEMENTS[element.type](element) )
    formulario.innerHTML +=  FORM_ELEMENTS[element.type](element)
 })
 
-var exampleModal = document.getElementById('exampleModal')
-exampleModal.addEventListener('show.bs.modal', function (event) {
+let claveProducto_input = document.getElementById('claveProducto')
+let divBusquedaProducto = document.getElementById('id_divBusquedaProducto')
+divBusquedaProducto.innerHTML = `
+   <div class="divBusquedaProducto">
+      <span id="busquedaDescripcionProducto" class="m-2"></span>
+      <button 
+         type="button" 
+         class="btn btn-primary m-2" 
+         data-bs-toggle="modal" 
+         data-bs-target="#busquedaProductoModal" 
+         >Busqueda de producto
+      </button>
+   </div>  
+`
+let busquedaDescripcionProducto = document.getElementById('busquedaDescripcionProducto')
+var busquedaProductoModal = document.getElementById('busquedaProductoModal')
+busquedaProductoModal.addEventListener('show.bs.modal', function (event) {
  
 })
 
@@ -79,9 +94,15 @@ const loadProducts = (_class) => {
    selectProduct.innerHTML = options
 }
 
-let claveProducto_input = document.getElementById('claveProducto')
-const selectedProduct = (_product ) => {
-   claveProducto_input.value = _product
+
+const selectedProduct = (target ) => {
+   busquedaDescripcionProducto.innerHTML = ""
+console.log(target[target.selectedIndex].text)
+   if(target.value !== ""){
+      claveProducto_input.value = target.value
+      busquedaDescripcionProducto.innerHTML  = target.options[target.selectedIndex].text
+   }
+    
 }
 
 
@@ -89,15 +110,15 @@ document.addEventListener('DOMContentLoaded',loadProductDivision)
 selectDivision.addEventListener('change', e => loadProductFamily(e.target.value))
 selectFamily.addEventListener('change', e => loadProductClass(e.target.value))
 selectClass.addEventListener('change', e => loadProducts (e.target.value))
-selectProduct.addEventListener('change', e => selectedProduct (e.target.value))
+selectProduct.addEventListener('change', e => selectedProduct (e.target))
 
 
 
 
 /*
-var exampleModal2 = document.getElementById('seleccionProducto')
-var modal = bootstrap.Modal.getOrCreateInstance("#exampleModal")
+var busquedaProductoModal2 = document.getElementById('seleccionProducto')
+var modal = bootstrap.Modal.getOrCreateInstance("#busquedaProductoModal")
 
-exampleModal2.addEventListener('click', () => {
+busquedaProductoModal2.addEventListener('click', () => {
    modal.hide()
 })*/

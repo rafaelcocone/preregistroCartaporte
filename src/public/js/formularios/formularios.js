@@ -44,21 +44,14 @@ const FORM_ELEMENTS = {
             </div> `
         return  innerHTML
     },
-    "button": (type,title,func = null) => {
-        const inputRef = document.createElement("input")
-        inputRef.type = type
-       // inputRef.id =  title
-        inputRef.value = title
-        if(func) inputRef.onclick = func
-        return inputRef
-    },
-    "inputButton": (type,title,func = null) => {
-        const inputRef = document.createElement("input")
-        inputRef.type = type
-       // inputRef.id =  title
-        inputRef.value = title
-        if(func) inputRef.onclick = func
-        return inputRef
+    "div": ({name}) => {
+        let innerHTML = `
+            <div class="formularioRow mb-3">
+                <div id="${name}" class="formularioInput">
+                    
+                </div>
+            </div> `
+        return  innerHTML
     },
     "buttonDivForm": ({submitName}) => {
         let innerHTML = `

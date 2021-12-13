@@ -4,3 +4,9 @@ body{
 }
 
 
+.divBusquedaProducto{
+    display: flex;
+    flex-direction:  column;
+}
+
+
