@@ -9,6 +9,7 @@ import cartaporteRoutes from './routes/cartaporte.routes'
 import guiasRoutes from './routes/guias.routes'
 import mercanciasRoutes from './routes/mercancias.routes'
 
+import sistema from './routes/system.routes'
 //initializaction
 const app = express()
 
@@ -44,6 +45,7 @@ app.use(authRoutes)
 app.use('/cartaporte',cartaporteRoutes)
 app.use('/guias',guiasRoutes)
 app.use('/mercancias',mercanciasRoutes )
+app.use('/system',sistema)
 
 
 //public

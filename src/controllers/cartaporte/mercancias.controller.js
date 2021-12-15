@@ -1,5 +1,6 @@
 
 import {connect} from '../../database'
+import excelJS from 'exceljs'
 
 export const getMercancias = async (req,res) => {
     const connection  = await connect()
@@ -139,5 +140,14 @@ export const deleteMercancias = async (req,res) => {
     
 }
 
-
+export const excelMercnacias = async (req,res) => {
+    let status = 200
+    const workbook = new excelJS.Workbook();  // Create a new workbook
+    const worksheet = workbook.addWorksheet("My Users"); // New Worksheet
+    const path = "./files";  // Path to download excel
+    
+    res
+        .status(status)
+        .redirect('/mercancias')
+}
 
