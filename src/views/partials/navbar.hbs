@@ -1,8 +1,44 @@
 <nav class="navbar  navbar-expand-lg  navbar-dark bg-dark mb-4">
     <div class="container-fluid">
-        <a href="/" class="navbar-brand">Inicio</a>
-        <a href="/cartaporte" class="navbar-brand">Cartaporte</a>
-        <a href="/guias" class="navbar-brand">Guias</a>
-        <a href="/mercancias" class="navbar-brand">Mercancias</a>
+
+        <a class="navbar-brand" href="#">Moving Pack</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/" >Inicio</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Clientes
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/clientes">Clientes</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/">Consignatarios</a></li>
+                        
+                        <li><a class="dropdown-item" href="/">Ubicaciones</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/guias">Guias</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cartaporte
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <li> <a href="/cartaporte" class="dropdown-item">Cartaporte</a></li>
+                        <li> <a href="/mercancias" class="dropdown-item">Mercancias</a></li> 
+                    </ul>
+                </li>
+                    
+               
+            </ul>
+        </div>
+
     </div>
 </nav>

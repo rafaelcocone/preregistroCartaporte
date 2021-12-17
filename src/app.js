@@ -8,6 +8,7 @@ import authRoutes from './routes/authentication.routes'
 import cartaporteRoutes from './routes/cartaporte.routes'
 import guiasRoutes from './routes/guias.routes'
 import mercanciasRoutes from './routes/mercancias.routes'
+import clientesRoutes from './routes/clientes.routes'
 
 import sistema from './routes/system.routes'
 //initializaction
@@ -45,8 +46,8 @@ app.use(authRoutes)
 app.use('/cartaporte',cartaporteRoutes)
 app.use('/guias',guiasRoutes)
 app.use('/mercancias',mercanciasRoutes )
+app.use('/clientes',clientesRoutes)
 app.use('/system',sistema)
-
 
 //public
 app.use(express.static(path.join(__dirname,'public')))
