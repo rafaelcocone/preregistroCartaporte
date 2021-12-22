@@ -1,0 +1,75 @@
+{{#if vehiculos}}
+  <table class="table table-bordered table-hover table-dark">
+    <thead>
+      <tr>
+        <th>Número Ecologico</th>
+        <th>Alias</th>
+        <th>Placa</th>
+        <th>Número de Serie</th>
+        <th>Número de Motor</th>
+        <th>Año</th>
+        <th>Número tarjeta de Circulación</th>
+        <th>Expiración tarjeta de Circulación</th>
+        <th>Número Tarjeton</th>
+        <th>Expiración tarjeton</th>
+        <th>Costo no Adeudo</th>
+        <th>Costo tarjeta Circulación</th>
+        <th>Color Vehiculo</th>
+        <th>Caja Seca</th>
+        <th>Capacidad de Volúmen</th>
+        <th>Capacidad de Peso</th>
+        <th>Tipo Modelo de Vehiculo></th>
+        <th>Tipo Vehiculo</th>
+        <th>Marca</th>  
+        <th> </th>
+        <th> </th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {{#each vehiculos}}
+        <tr>
+          <td>{{num_eco}}</td>
+          <td>{{nameAlias}}</td>
+          <td>{{matricula}}</td>
+          <td>{{serieNumber}}</td>
+          <td>{{motorNumber}}</td>
+          <td>{{vehicleYear}}</td>
+          <td>{{circulationCardNumber}}</td>
+          <td>{{circulationCardExpiration}}</td>
+          <td>{{numTarjeton}}</td>
+          <td>{{tarjetonExpiration}}</td>
+          <td>{{noAdeudo}}</td>
+          <td>{{circulationCardCost}}</td>
+          <td>{{vehicleColor}}</td>
+          <td>{{vehicleBox}}</td>
+          <td>{{volumeCapacity}}</td>
+          <td>{{weigthCapacity}}</td>
+          <td>{{id_typeModelVehicles}}</td>
+          <td>{{fk_idVehicleType}}</td>
+          <td>{{id_brand}}</td>
+          <td>
+            <a href="/vehiculos/{{id}}/edit" class="btn btn-info">
+              Editar
+            </a>
+          </td>
+          <td>
+            <a href="/vehiculos/{{id}}/delete" class="btn btn-danger">
+              Eliminar
+            </a>
+          </td>
+        </tr>
+
+      {{/each}}
+    </tbody>
+  </table>
+
+{{else}}
+  <div class="h-100 d-flex align-item-center justify-content-center">
+    <div class="text-center text-white">
+      <h1>No hay vehiculos registrados</h1>
+      <i class="far fa-clipboard fa-10x"></i>
+    </div>
+
+  </div>
+{{/if}}

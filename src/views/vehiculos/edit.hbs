@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 offset-md-3">
+      <div class="card card-body bg-dark p-4 text-white rounded-0">
+       
+        <form action="/vehiculos/{{vehiculos.id}}/edit" method="POST">
+
+          <div class="formularioSection">
+            <div class="formularioRow">
+              <h2>Editar Vehiculo</h2>
+            </div>
+            <div class="formularioSection" id="formualrioVehiculos">
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- <script src="/js/formularios/formularios.js"></script> -->
+<script>
+     const vehiculos = {}
+
+        vehiculos.num_eco=                      "{{{vehiculos.num_eco}}}"
+        vehiculos.nameAlias=                    "{{{vehiculos.nameAlias}}}"
+        vehiculos.matricula=                    "{{{vehiculos.matricula}}}"
+        vehiculos.serieNumber=                  "{{{vehiculos.serieNumber}}}"
+        vehiculos.motorNumber=                  "{{{vehiculos.motorNumber}}}"
+        vehiculos.vehicleYear=                  "{{{vehiculos.vehicleYear}}}"
+        vehiculos.circulationCardNumber=        "{{{vehiculos.circulationCardNumber}}}"
+        vehiculos.circulationCardExpiration=    "{{{vehiculos.circulationCardExpiration}}}"
+        vehiculos.numTarjeton=                  "{{{vehiculos.numTarjeton}}}"
+        vehiculos.tarjetonExpiration=           "{{{vehiculos.tarjetonExpiration}}}"
+        vehiculos.noAdeudo=                     "{{{vehiculos.noAdeudo}}}"
+        vehiculos.circulationCardCost=          "{{{vehiculos.circulationCardCost}}}"
+        vehiculos.vehicleColor=                 "{{{vehiculos.vehicleColor}}}"
+        vehiculos.vehicleBox=                   "{{{vehiculos.vehicleBox}}}"
+        vehiculos.volumeCapacity=               "{{{vehiculos.volumeCapacity}}}"
+        vehiculos.weigthCapacity=               "{{{vehiculos.weigthCapacity}}}"
+        vehiculos.id_typeModelVehicles=         "{{{vehiculos.id_typeModelVehicles}}}"
+        vehiculos.fk_idVehicleType=             "{{{vehiculos.fk_idVehicleType}}}"
+        vehiculos.id_brand=                     "{{{vehiculos.id_brand}}}"
+
+
+</script>
+
+
+
+<script src="/js/formularios/formVehiculosEdit.js"></script>

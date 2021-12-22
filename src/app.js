@@ -9,6 +9,7 @@ import cartaporteRoutes from './routes/cartaporte.routes'
 import guiasRoutes from './routes/guias.routes'
 import mercanciasRoutes from './routes/mercancias.routes'
 import clientesRoutes from './routes/clientes.routes'
+import vehiculosRoutes from './routes/vehiculos.routes'
 
 import sistema from './routes/system.routes'
 //initializaction
@@ -48,6 +49,8 @@ app.use('/guias',guiasRoutes)
 app.use('/mercancias',mercanciasRoutes )
 app.use('/clientes',clientesRoutes)
 app.use('/system',sistema)
+app.use('/vehiculos',vehiculosRoutes)
+
 
 //public
 app.use(express.static(path.join(__dirname,'public')))
