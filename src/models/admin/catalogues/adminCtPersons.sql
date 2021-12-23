@@ -1,17 +1,9 @@
 create table adminCtPersons (
      id int(10) unsigned NOT NULL AUTO_INCREMENT,
-     name varchar(100) not null,
-     lastname1 varchar(50) not null,
-     lastname2 varchar(50) not null,
-
+     id_business int(10) unsigned NOT NULL,
      id_address int(10) unsigned NOT NULL,
-
-     telephone varchar(50) not null,
-     mobil varchar(50) not null,
-     email varchar(200) not null,
-     rfc varchar(20) not null,
-     businessName varchar(200) DEFAULT NULL,
-     
+     id_contacto int(10) unsigned NOT NULL,
+    
      active tinyint(1) unsigned DEFAULT 1,
     created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ,
     updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
@@ -53,6 +45,10 @@ alter table adminCtPersons add constraint REF_person_address_FK
      foreign key (id_address)
      references adminCtAddress (`id`);
 
+alter table adminCtPersons add constraint REF_person_business_FK
+     foreign key (id_business)
+     references adminCtBusiness (`id`);
+
 -- Index Section
 -- _____________ 
 
@@ -69,4 +65,7 @@ create index REF_person_location_IND
      on adminCtPersons (id_localion);
 
 create index REF_person_address_IND
-     on adminCtAddress (id_address);
+     on adminCtPersons (id_address);
+
+create index REF_person_business_IND
+     on adminCtPersons (id_business);

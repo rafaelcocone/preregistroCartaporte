@@ -2,7 +2,11 @@ import express from 'express'
 import morgan from 'morgan'
 import { engine } from 'express-handlebars'
 import path from 'path'
+import flash  from 'connect-flash'//cuadros dfe mensajes
+import session from 'express-session' //sessiones
+import MySQLStore  from 'express-mysql-session' //ssesiones de mysql par abase de datos
 
+//importacion  de archivos de rutas
 import indexRoutes from './routes/index.routes'
 import authRoutes from './routes/authentication.routes'
 import cartaporteRoutes from './routes/cartaporte.routes'
@@ -16,7 +20,12 @@ import typevehiculosRoutes from './routes/typevehiculos.routes'
 import insurancecarrierRoutes from './routes/insurancecarrier.routes'
 import lowvehiculosRoutes from './routes/lowvehiculos.routes'
 
-import sistema from './routes/system.routes' 
+
+//importar informacion de basedatos
+import { configMYSQL } from "./config";
+
+import sistema from './routes/system.routes'
+
 //initializaction
 const app = express()
 
@@ -34,6 +43,13 @@ app.engine('.hbs', engine({
 app.set('view engine', '.hbs')
 
 //middleware
+app.use(session({//guardado de seecion en base de datos 
+    secret: 'SanJuanParangaricutiroSession',
+    resave: false,
+    saveUninitialized: false,
+    store: new MySQLStore(configMYSQL)
+}))
+app.use(flash())//uso de mensajes y notificaciones
 app.use(morgan('dev')) 
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
@@ -41,7 +57,8 @@ app.use(express.json())
 
 //global variables
 app.use((req,res,next) => {
-    
+    app.locals.success = req.flash('success')
+    app.locals.message =  req.flash('message')
     next();
 })
 
