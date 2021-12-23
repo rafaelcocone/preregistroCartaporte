@@ -15,17 +15,23 @@
 
     <script src="/libs/catalogoUnidad.js"></script>
     <script src="/libs/catalogoProducto.js"></script>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  
 </head>
 <body>
     {{!-- menu de navegacion --}}
     {{> navbar}}
+
+    {{> messages}}
 
     <div class="mt-2">
          {{{body}}}
     </div>
 
 
-   
+     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
+   
 </body>
 </html>

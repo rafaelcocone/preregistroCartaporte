@@ -52,10 +52,16 @@ busquedaProductoModal.addEventListener('show.bs.modal', function (event) {
  
 })
 
+
 const loadProductDivision = () => {
    let options = '<option value = "">Elige una división de Producto</option>'
    for(const division in divisiones){
       options += `<option value = "${division}">${divisiones[division].description}</option>`
+      
+      _division.push({
+         id: division,
+        text: divisiones[division].description
+      })
    }
    selectDivision.innerHTML = options
 }
@@ -97,7 +103,6 @@ const loadProducts = (_class) => {
 
 const selectedProduct = (target ) => {
    busquedaDescripcionProducto.innerHTML = ""
-console.log(target[target.selectedIndex].text)
    if(target.value !== ""){
       claveProducto_input.value = target.value
       busquedaDescripcionProducto.innerHTML  = target.options[target.selectedIndex].text
@@ -105,13 +110,14 @@ console.log(target[target.selectedIndex].text)
     
 }
 
-
+/*
 document.addEventListener('DOMContentLoaded',loadProductDivision)
+
 selectDivision.addEventListener('change', e => loadProductFamily(e.target.value))
 selectFamily.addEventListener('change', e => loadProductClass(e.target.value))
 selectClass.addEventListener('change', e => loadProducts (e.target.value))
 selectProduct.addEventListener('change', e => selectedProduct (e.target))
-
+*/
 
 
 
@@ -122,3 +128,36 @@ var modal = bootstrap.Modal.getOrCreateInstance("#busquedaProductoModal")
 busquedaProductoModal2.addEventListener('click', () => {
    modal.hide()
 })*/
+
+$(document).ready(function() {
+   _division =  []
+   for(const division in divisiones){
+      _division.push({
+         id: division,
+        text: divisiones[division].description
+      })
+   }
+   var $ls =$('#division-name') 
+
+   console.log(_division)
+   $ls.select2()
+
+   $( "#division-name" ).change(function(e) {
+      alert( e.target.options[e.target.selectedIndex].text)
+             
+      alert($("#division-name option:selected" ).text())
+      alert($( this ).val() )
+      //loadProductFamily(e.target.value);
+    });
+/*
+    $( "#familia-name" ).change(function(e) {
+      loadProductClass(e.target.value);
+    });
+    $( "#clase-name" ).change(function(e) {
+      loadProducts (e.target.value);
+    });
+    $( "#producto-name" ).change(function(e) {
+      selectedProduct (e.target);
+    });
+*/
+});

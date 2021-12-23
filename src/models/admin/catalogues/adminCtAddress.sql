@@ -16,6 +16,13 @@ create table adminCtAddress (
   
      constraint ID_adminCtAddress_ID primary key (id));
 
+INSERT INTO  adminCtAddress (
+     
+)
+
+
+
+
 -- Constraints Section
 -- ___________________ 
 alter table adminCtAddress add constraint REF_address_users_1_FK

@@ -41,6 +41,7 @@ export const addMercancias = async (req,res) => {
             req.body.STCC,
             req.body.fracArancelaria
         ])
+        req.flash('success','Mercancía guardada satisfactoriamente.')
     }catch(e){
         status=400
         result = e.message
@@ -108,7 +109,7 @@ export const postMercanciasEdit = async (req,res) => {
     try{
         const connection  = await connect()
         result = await connection.query(sql ,[updates,id] )
-
+        req.flash('success','Mercancía actualizado satisfactoriamente.')
     }catch(e){
         status=400
         result = e.message
@@ -128,7 +129,7 @@ export const deleteMercancias = async (req,res) => {
     try{
         const connection  = await connect()
         result = await connection.query(sql ,[id] )
-
+        req.flash('success','Mercancía borrada satisfactoriamente.')
     }catch(e){
         status=400
         //almacenarresult = e.message
@@ -146,6 +147,7 @@ export const excelMercnacias = async (req,res) => {
     const worksheet = workbook.addWorksheet("My Users"); // New Worksheet
     const path = "./files";  // Path to download excel
     
+   
     res
         .status(status)
         .redirect('/mercancias')

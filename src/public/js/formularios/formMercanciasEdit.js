@@ -21,5 +21,5 @@ let componentes = [
 const formulario = document.getElementById(nombreFormulario)
 
 componentes.forEach(element => {
-   formulario.appendChild( FORM_ELEMENTS[element.type](element) )
+   formulario.innerHTML +=  FORM_ELEMENTS[element.type](element) 
 })
