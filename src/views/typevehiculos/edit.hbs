@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 offset-md-3">
+      <div class="card card-body bg-dark p-4 text-white rounded-0">
+       
+        <form action="/typevehiculos/{{typevehiculos.id}}/edit" method="POST">
+
+          <div class="formularioSection">
+            <div class="formularioRow">
+              <h2>Editar Tipo Vehiculo</h2>
+            </div>
+            <div class="formularioSection" id="formualrioTypeVehiculos">
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> 
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="/js/formularios/formularios.js"></script>
+<script>
+     const typevehiculos = {}
+
+        typevehiculos.code=                      "{{{typevehiculos.code}}}"
+        typevehiculos.vehicleType=               "{{{typevehiculos.vehicleType}}}"
+        
+</script>
+
+
+
+<script src="/js/formularios/formtypevehiculosEdit.js"></script>

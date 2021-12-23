@@ -1,0 +1,41 @@
+{{#if brandvehiculos}}
+  <table class="table table-bordered table-hover table-dark">
+    <thead>
+      <tr>
+        <th>Código</th>v
+        <th>Descripción</th>
+        <th> </th>
+        <th> </th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {{#each brandvehiculos}}
+        <tr>
+          <td>{{code}}</td>
+          <td>{{description}}</td>
+          <td>
+            <a href="/brandvehiculos/{{id}}/edit" class="btn btn-info">
+              Editar
+            </a>
+          </td>
+          <td>
+            <a href="/brandvehiculos/{{id}}/delete" class="btn btn-danger">
+              Eliminar
+            </a>
+          </td>
+        </tr>
+
+      {{/each}}
+    </tbody>
+  </table>
+
+{{else}}
+  <div class="h-100 d-flex align-item-center justify-content-center">
+    <div class="text-center text-white">
+      <h1>No hay tipo de marca de vehiculo registrado</h1>
+      <i class="far fa-clipboard fa-10x"></i>
+    </div>
+
+  </div>
+{{/if}}
